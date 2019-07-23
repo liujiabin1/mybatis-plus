@@ -1,0 +1,13 @@
+# 项目环境配置
+profile-env: ${profile-env}
+
+# apollo
+app:
+  id: ${project.name}
+
+apollo:
+  env: fat
+  meta: http://47.93.179.166:18080
+  bootstrap:
+    enabled: true
+    namespaces: application.yml

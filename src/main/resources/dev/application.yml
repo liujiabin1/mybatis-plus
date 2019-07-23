@@ -1,0 +1,51 @@
+zrb:
+  test-domain: http://127.0.0.1:8000
+
+# 项目环境配置
+profile-env: ${profile-env}
+
+# 自定义配置
+swagger:
+  domain: 127.0.0.1:${server.port}
+  api-ver: v1
+  name: ${project.name}
+
+# 日志配置
+log:
+  console-level: info
+  file:
+    dir: logs
+    max-history: 1
+    debug-enabled: false
+
+# spring-boot config
+server:
+  address: 0.0.0.0
+  port: 8000
+
+spring:
+  datasource:
+    configs:
+      master:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: root
+        minimum-idle: 1
+        maximum-pool-size: 5
+
+      slave:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: root
+        minimum-idle: 1
+        maximum-pool-size: 5
+
+# mybatis 配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    use-actual-param-name: true
+
+pagehelper:
+  helper-dialect: mysql
+

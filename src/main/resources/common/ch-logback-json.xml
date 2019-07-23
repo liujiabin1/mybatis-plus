@@ -1,0 +1,38 @@
+<included>
+    <if condition='"${ENV}"=="prod"'>
+        <then>
+            <appender name="JSON_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                    <!--日志文件输出的文件名-->
+                    <FileNamePattern>${LOG_HOME}/json.log.%d{yyyy-MM-dd}</FileNamePattern>
+                    <!--日志文件保留天数-->
+                    <maxHistory>1</maxHistory>
+                    <cleanHistoryOnStart>true</cleanHistoryOnStart>
+                </rollingPolicy>
+                <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                    <providers>
+                        <pattern>
+                            <pattern>
+                                {
+                                "server_name": "${SERVER_NAME}",
+                                "timestamp": "%date{\"yyyy-MM-dd HH:mm:ss,SSS\"}",
+                                "thread": "%thread",
+                                "level": "%level",
+                                "class": "%logger{5}",
+                                "line": "%line",
+                                "message": "%message"
+                                }
+                            </pattern>
+                        </pattern>
+                    </providers>
+                </encoder>
+                <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+                    <level>INFO</level>
+                </filter>
+            </appender>
+            <root>
+                <appender-ref ref="JSON_FILE"/>
+            </root>
+        </then>
+    </if>
+</included>

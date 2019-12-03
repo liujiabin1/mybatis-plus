@@ -2,6 +2,8 @@ package com.zrb.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import com.zrb.component.database.DataSourceAdvisor;
+import com.zrb.component.database.DataSourceInterceptor;
 import com.zrb.component.database.DataSourceDynamicRouter;
 import com.zrb.component.database.DataSourceType;
 import lombok.Data;
@@ -25,6 +27,7 @@ import java.util.Map;
 public class DataSourceConfig {
 
     private Map<String, HikariConfig> configs = new HashMap<String, HikariConfig>();
+
     /**
      * 为了注解的可控性, 需要配置枚举DataSourceType <-> configs.keys
      *
@@ -45,5 +48,11 @@ public class DataSourceConfig {
         sourceRouter.setTargetDataSources(sources);
         sourceRouter.setDefaultTargetDataSource(sources.get(DataSourceType.MASTER));
         return sourceRouter;
+    }
+
+    @Bean
+    public DataSourceAdvisor dataSourceAdvisor() {
+        DataSourceInterceptor interceptor = new DataSourceInterceptor();
+        return new DataSourceAdvisor(interceptor);
     }
 }

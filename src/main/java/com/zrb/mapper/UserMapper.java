@@ -1,5 +1,7 @@
 package com.zrb.mapper;
 
+import com.zrb.component.database.DataSourceRouter;
+import com.zrb.component.database.DataSourceType;
 import com.zrb.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository;
  **/
 @Mapper
 @Repository
+@DataSourceRouter(DataSourceType.SLAVE)
 public interface UserMapper extends BaseMapper<User> {
 
     @Select("select * from user where age>=#{age}")

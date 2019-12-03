@@ -42,7 +42,7 @@ public class TestController extends BaseController {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public RestResponse test() {
-        return new RestResponse<>().data(env);
+        return new RestResponse<>().data(userMapper.findOne(1));
     }
 
     @RequestMapping(value = "/test/sql", method = RequestMethod.GET)

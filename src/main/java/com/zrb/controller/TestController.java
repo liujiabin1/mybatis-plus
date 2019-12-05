@@ -1,7 +1,10 @@
 package com.zrb.controller;
 
 
+import com.github.pagehelper.PageHelper;
 import com.zrb.client.TestClient;
+import com.zrb.component.database.DataSourceRouter;
+import com.zrb.component.database.DataSourceType;
 import com.zrb.entity.User;
 import com.zrb.mapper.UserMapper;
 import com.zrb.model.client.TestServerRequest;
@@ -12,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,6 +49,25 @@ public class TestController extends BaseController {
         return new RestResponse<>().data(userMapper.findOne(1));
     }
 
+    @Transactional
+    @DataSourceRouter(DataSourceType.SLAVE)
+    @RequestMapping(value = "/test/t", method = RequestMethod.GET)
+    public RestResponse testT() {
+        User user = userMapper.findOne(1);
+        user.setAge(user.getAge() + 1);
+        userMapper.update(user);
+        return new RestResponse<>();
+    }
+
+    @Transactional
+    @DataSourceRouter(DataSourceType.SLAVE)
+    @RequestMapping(value = "/test/page", method = RequestMethod.GET)
+    public RestResponse testPage() {
+        PageHelper.startPage(1, 1);
+        List<User> users = userMapper.findAll();
+        return new RestResponse<>().data(users);
+    }
+
     @RequestMapping(value = "/test/sql", method = RequestMethod.GET)
     public RestResponse testSql() {
         log.info("---------------------------------------------------");
@@ -57,7 +80,9 @@ public class TestController extends BaseController {
         log.info("[base::findOneBySql] result: {}", JsonTool.toJson(user));
 
         // 写java 实体类驼峰字段 (太灵活 不推荐使用)
-        user = userMapper.findOneByCond(new HashMap<String, Object>() {{ put("id", 1); }});
+        user = userMapper.findOneByCond(new HashMap<String, Object>() {{
+            put("id", 1);
+        }});
         log.info("[base::findOneByCond] result: {}", JsonTool.toJson(user));
 
         // (太灵活 不推荐使用)
@@ -65,7 +90,9 @@ public class TestController extends BaseController {
         log.info("[base::findListBySql] result: {}", JsonTool.toJson(users));
 
         // (太灵活 不推荐使用)
-        users = userMapper.findListByCond(new HashMap<String, Object>() {{ put("age", 1); }});
+        users = userMapper.findListByCond(new HashMap<String, Object>() {{
+            put("age", 1);
+        }});
         log.info("[base::findListByCond] result: {}", JsonTool.toJson(users));
 
         // 推荐使用 方便定制

@@ -7,6 +7,7 @@ import com.zrb.component.database.DataSourceInterceptor;
 import com.zrb.component.database.DataSourceDynamicRouter;
 import com.zrb.component.database.DataSourceType;
 import lombok.Data;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,7 @@ import java.util.Map;
  * Date:   2018/8/20 19:37
  * Description:
  **/
-@Data
+@Setter
 @Configuration
 @ConfigurationProperties(prefix = "spring.datasource")
 public class DataSourceConfig {

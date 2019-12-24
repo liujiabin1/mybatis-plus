@@ -20,7 +20,9 @@
                                 "level": "%level",
                                 "class": "%logger{5}",
                                 "line": "%line",
-                                "message": "%message"
+                                "log_id": "%X{LOG_ID}",
+                                "message": "%message",
+                                "stack_trace": "%exception{8}"
                                 }
                             </pattern>
                         </pattern>

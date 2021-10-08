@@ -5,6 +5,7 @@
  -->
 <configuration debug="false" scan="false" scanPeriod="30 seconds">
 
+
     <springProperty name="ENV" source="profile-env" defaultValue="dev"/>
     <springProperty name="CONSOLE_LEVEL" source="log.console-level" defaultValue="info"/>
     <springProperty name="LOG_HOME" source="log.file.dir" defaultValue=""/>

@@ -7,7 +7,7 @@ app:
 
 apollo:
   env: pro
-  meta: http://apollo-config.pro.zhenrongbao.com
+  meta: http://apollo-configservice-pro.riverstar.cn:18080
   bootstrap:
     enabled: true
     namespaces: application.yml

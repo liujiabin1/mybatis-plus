@@ -20,7 +20,6 @@ public class Application {
         application.addInitializers(new ApolloEnvInitializer());
         application.addInitializers(new LoggingReInitializer());
         application.run(args);
-
     }
 
 }

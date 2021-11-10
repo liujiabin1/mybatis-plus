@@ -62,9 +62,9 @@
 
         <!-- 工具类 -->
         <dependency>
-            <groupId>com.zhenrongbao</groupId>
-            <artifactId>zrb-tool-sdk</artifactId>
-            <version>1.0.3-SNAPSHOT</version>
+            <groupId>com.riverstar</groupId>
+            <artifactId>common.toolbox</artifactId>
+            <version>1.1</version>
         </dependency>
 
         <!-- apollo -->

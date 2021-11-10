@@ -7,7 +7,7 @@ app:
 
 apollo:
   env: fat
-  meta: http://47.93.179.166:18080
+  meta: http://apollo-configservice-fat.riverstar.cn:18080
   bootstrap:
     enabled: true
     namespaces: application.yml

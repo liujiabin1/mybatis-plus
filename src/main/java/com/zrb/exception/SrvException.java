@@ -1,6 +1,6 @@
 package com.zrb.exception;
 
-import com.zrb.tool.StringTool;
+import com.riverstar.tool.StringTool;
 
 /**
  * Author:  Hardy

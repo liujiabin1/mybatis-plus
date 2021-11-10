@@ -1,6 +1,6 @@
 package com.zrb.entity;
 
-import com.zrb.tool.DateTool;
+import com.riverstar.tool.DateTool;
 import lombok.Data;
 
 /**

@@ -1,9 +1,7 @@
 package com.zrb.mapper;
 
-import com.zrb.component.database.DataSourceRouter;
-import com.zrb.component.database.DataSourceType;
+import com.riverstar.tool.StringTool;
 import com.zrb.entity.BaseEntity;
-import com.zrb.tool.StringTool;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.SelectProvider;

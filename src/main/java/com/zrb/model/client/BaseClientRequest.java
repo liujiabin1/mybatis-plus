@@ -1,7 +1,7 @@
 package com.zrb.model.client;
 
-import com.zrb.tool.DebugTool;
-import com.zrb.tool.JsonTool;
+import com.riverstar.tool.DebugTool;
+import com.riverstar.tool.JsonTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -3,7 +3,7 @@ package com.zrb.component.common;
 import com.ctrip.framework.apollo.model.ConfigChangeEvent;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
 import com.zrb.config.LoggingReInitializer;
-import com.zrb.tool.JsonTool;
+import com.riverstar.tool.JsonTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -21,4 +21,5 @@ public class Application {
         application.addInitializers(new LoggingReInitializer());
         application.run(args);
     }
+
 }

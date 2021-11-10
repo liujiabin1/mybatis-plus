@@ -1,10 +1,10 @@
 package com.zrb.component.srv;
 
+import com.riverstar.tool.SleepTool;
 import com.zrb.component.common.GlobalEnv;
 import com.zrb.constant.common.RabbitConst;
 import com.zrb.model.message.TestMessage;
 import com.zrb.service.TestService;
-import com.zrb.tool.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

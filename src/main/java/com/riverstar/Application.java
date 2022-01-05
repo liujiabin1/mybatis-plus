@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * Description:
  **/
 @EnableAsync
+//@MapperScan("mapper")
 @SpringBootApplication
 public class Application {
 

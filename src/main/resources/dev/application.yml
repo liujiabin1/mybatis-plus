@@ -27,7 +27,7 @@ spring:
   datasource:
     configs:
       master:
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/zhenrongbao?useUnicode=true&characterEncoding=utf8
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/mybatis?useUnicode=true&characterEncoding=utf8
         username: root
         password: root
         minimum-idle: 1
@@ -41,10 +41,10 @@ spring:
         maximum-pool-size: 5
 
 # mybatis 配置
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
-    use-actual-param-name: true
+#mybatis:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    use-actual-param-name: true
 
 pagehelper:
   helper-dialect: mysql

@@ -1,17 +1,20 @@
 package com.riverstar.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * Author: Hardy
  * Date:   2019/7/23
  * Description:
  **/
-@EqualsAndHashCode(callSuper = true)
 @Data
-public class User extends BaseEntity {
+public class User {
+
+    private Long id;
+
     private String name;
 
-    private Integer age;
+    private int age;
+
+    private String email;
 }

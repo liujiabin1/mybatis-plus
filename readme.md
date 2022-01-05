@@ -1,8 +1,8 @@
-# zrb-demo 模板框架项目
+# mybatis-plus 模板框架项目
 
 ### 目录介绍
 ```
-- com.zrb
+- com.riverstar
     - client 调用其他服务
         - BaseClient    所有client的基类, 提供通用的解析、判断
         - TestClient    基于okhttp做的封装, 学习了解下方资料
@@ -61,7 +61,7 @@
     - tool 静态工具包
         - LogTool 提供关键日志打印alarm.log
 ```
-注: mybatis 注解使用 
+注: mybatis-plus 注解使用 
 ```
     #{}: 自动类型转换, 不需要使用@Param [ep: string 转换'xx']
     ${}: 不转换直接赋值, 必须需要使用@Param [ep: string 则不会 xx] 

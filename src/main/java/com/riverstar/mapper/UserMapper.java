@@ -1,11 +1,8 @@
 package com.riverstar.mapper;
 
-import com.riverstar.component.database.DataSourceRouter;
-import com.riverstar.component.database.DataSourceType;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.riverstar.entity.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 
 /**
  * Author: Hardy
@@ -13,10 +10,8 @@ import org.springframework.stereotype.Repository;
  * Description:
  **/
 @Mapper
-@Repository
-@DataSourceRouter(DataSourceType.SLAVE)
+//@Repository
+//@DataSourceRouter(DataSourceType.SLAVE)
 public interface UserMapper extends BaseMapper<User> {
 
-    @Select("select * from user where age>=#{age}")
-    User findByAgeGte(int age);
 }

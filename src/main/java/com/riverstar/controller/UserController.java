@@ -50,7 +50,7 @@ public class UserController {
     }
 
     /**
-     * 分页查询
+     *  ToDo 4。分页查询
      */
     @RequestMapping(value = "/page", method = RequestMethod.GET)
     public RestResponse page() {
@@ -70,6 +70,10 @@ public class UserController {
         return new RestResponse<>().data("success");
     }
 
+    /**
+     * ToDo 5.乐观锁的实现
+     * @return
+     */
     @RequestMapping(value = "/version", method = RequestMethod.GET)
     public RestResponse version(){
         User user = new User();
@@ -83,7 +87,7 @@ public class UserController {
     }
 
     /**
-     * 条件构造器
+     * ToDo 6.条件构造器
      */
     @RequestMapping(value = "/query", method = RequestMethod.GET)
     public RestResponse query() {
@@ -96,7 +100,7 @@ public class UserController {
     }
 
     /**
-     * 条件构造器
+     * ToDo 7.lambda条件构造器
      */
     @RequestMapping(value = "/lambdaquery", method = RequestMethod.GET)
     public RestResponse lambdaquery() {

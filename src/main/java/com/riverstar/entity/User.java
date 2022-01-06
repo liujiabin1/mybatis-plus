@@ -25,7 +25,7 @@ public class User {
     private String email;
 
     /**
-     * 逻辑删除
+     * ToDo 3.逻辑删除
      */
     @TableLogic(value = "0", delval = "1")
     @TableField(fill = FieldFill.INSERT)

@@ -40,6 +40,10 @@ public class TestController extends BaseController {
     }
 
 
+    /**
+     * ToDo 1.代码生成器
+     * @return
+     */
     @RequestMapping(value = "/generate", method = RequestMethod.GET)
     public RestResponse generate() {
         testAutoGenerate.autoGenerate();

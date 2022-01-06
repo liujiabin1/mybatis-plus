@@ -66,7 +66,7 @@ public class AbilityAims implements Serializable {
      */
     private String modifiedBy;
 
-    //自动填充功能
+    //ToDo 2.自动填充数据功能
 
     /**
      * 创建时间

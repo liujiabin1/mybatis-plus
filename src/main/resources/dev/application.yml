@@ -46,6 +46,13 @@ spring:
 #    map-underscore-to-camel-case: true
 #    use-actual-param-name: true
 
+# mybatis-plus配置
+
 pagehelper:
   helper-dialect: mysql
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: com.riverstar.mapper.xml.*
 

@@ -31,10 +31,19 @@ public class TestController extends BaseController {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private TestAutoGenerate testAutoGenerate;
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public RestResponse test() {
         return new RestResponse<>().data(userMapper.selectById(1));
     }
 
+
+    @RequestMapping(value = "/generate", method = RequestMethod.GET)
+    public RestResponse generate() {
+        testAutoGenerate.autoGenerate();
+        return new RestResponse<>().data("success");
+    }
 
 }

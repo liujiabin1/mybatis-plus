@@ -30,4 +30,11 @@ public class User {
     @TableLogic(value = "0", delval = "1")
     @TableField(fill = FieldFill.INSERT)
     private int deleteFlag;
+
+    /**
+     * 版本号（用于乐观锁， 默认为 1）
+     */
+    @Version
+    @TableField(fill = FieldFill.INSERT)
+    private Integer version;
 }

@@ -13,6 +13,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
         this.strictInsertFill(metaObject,"createTime",Integer.class,DateTool.currentTime());
         this.strictInsertFill(metaObject,"updateTime",Integer.class,DateTool.currentTime());
         this.strictInsertFill(metaObject,"deleteFlag",Integer.class,0);
+        this.strictInsertFill(metaObject, "version", Integer.class, 1);
     }
 
     @Override
